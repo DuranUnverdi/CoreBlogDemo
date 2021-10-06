@@ -5,8 +5,7 @@ using System.Text;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IBlogDal : IGenericDal<Blog>
+   public interface IContactDal:IGenericDal<Contact>
     {
-
     }
 }
