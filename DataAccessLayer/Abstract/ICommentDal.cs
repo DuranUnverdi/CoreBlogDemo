@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataAccessLayer.Abstract
 {
-    interface ICommentDal : IGenericDal<Comment>
+   public interface ICommentDal : IGenericDal<Comment>
     {
     }
 }
