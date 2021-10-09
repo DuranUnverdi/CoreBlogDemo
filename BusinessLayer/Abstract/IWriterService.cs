@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccessLayer.Abstract
+namespace BusinessLayer.Abstract
 {
-   public interface IWriterDal : IGenericDal<Writer>
+   public interface IWriterService
     {
+        void AddWriter(Writer writer);
     }
 }
