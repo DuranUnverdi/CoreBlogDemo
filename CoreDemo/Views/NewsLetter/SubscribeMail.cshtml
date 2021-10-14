@@ -1,0 +1,12 @@
+﻿
+<div class="tech-btm">
+  
+    <p>Teknoloji, yazılım ve diğer bloglar </p>
+    @{
+        using (Html.BeginForm("SubscribeMail", "NewsLetter"))
+        {
+            <input type="email" placeholder="Email" required="" name="Mail">
+            <input type="submit" value="Abone Ol">
+        }
+    }
+</div>
