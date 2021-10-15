@@ -3,6 +3,7 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BusinessLayer.Concrete
@@ -43,7 +44,10 @@ namespace BusinessLayer.Concrete
         {
             return _blogDal.GetListAll();
         }
-
+        public List<Blog> GetLast3Blog()
+        {
+            return _blogDal.GetListAll().Take(3).ToList();
+        }
         public void UpdateBlog(Blog blog)
         {
             throw new NotImplementedException();
