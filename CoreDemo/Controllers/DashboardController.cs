@@ -12,7 +12,7 @@ namespace CoreDemo.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-             
+
             return View();
         }
     }
