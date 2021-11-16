@@ -9,16 +9,17 @@ namespace BusinessLayer.Concrete
 {
     public class NotificationManager : INotificationService
     {
-        INotificationDal _notification;
+        INotificationDal _notificationDal;
 
-        public NotificationManager(INotificationDal notification)
+        public NotificationManager(INotificationDal notificationDal)
         {
-            _notification = notification;
+            _notificationDal = notificationDal;
         }
 
         public List<Notification> GetList()
         {
-            throw new NotImplementedException();
+           return _notificationDal.GetListAll();
+
         }
 
         public void TAdd(Notification t)
