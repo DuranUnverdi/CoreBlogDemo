@@ -12,13 +12,14 @@
         <th>Bildirim</th>
         <th>Tarih</th>
     </tr>
-    
+
     @foreach (var item in Model)
     {
         <tr>
             <th>@item.NotificationId</th>
             <td>@item.NotificationDetails</td>
             <td>
+                @*ne kadar önce eklendiğini bulma*@
                 @{
                     DateTime end = (DateTime)item.NotificationDate;
                     DateTime now = DateTime.Now;
@@ -38,7 +39,7 @@
                 }
                 else
                 {
-            <p class="text-gray mb-0">@Convert.ToInt32(diff.ToString(@"ss")) dakika önce</p>
+                    <p class="text-gray mb-0">@Convert.ToInt32(diff.ToString(@"ss")) dakika önce</p>
                 }
             </td>
         </tr>
