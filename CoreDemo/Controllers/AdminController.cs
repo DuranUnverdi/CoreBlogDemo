@@ -15,7 +15,12 @@ namespace CoreDemo.Controllers
     {
         public IActionResult Index()
         {
+           
             return View();
+        }
+        public PartialViewResult AdminNavbarPartial()
+        {
+            return PartialView();
         }
     }
 }
