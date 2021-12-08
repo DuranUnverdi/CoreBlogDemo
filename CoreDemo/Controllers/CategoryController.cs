@@ -12,9 +12,9 @@ namespace CoreDemo.Controllers
     public class CategoryController : Controller
     {
         CategoryManager cm =new CategoryManager(new EfCategoryRepository()); 
-        public IActionResult Index(int page=1)
+        public IActionResult Index()
         {
-            var values = cm.GetList().ToPagedList(page,3);
+            var values = cm.GetList();
             return View(values);
         }
     }

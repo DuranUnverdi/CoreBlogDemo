@@ -1,6 +1,5 @@
-﻿@using X.PagedList
-@using X.PagedList.Mvc.Core
-@model IPagedList<EntityLayer.Concrete.Category>
+﻿@using EntityLayer.Concrete
+@model List<Category> 
 @{
     Layout = null;
 }
@@ -24,5 +23,3 @@
         </tr>
     }
 </table>
-<br />
-@Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new {page}))
