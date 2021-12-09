@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CoreDemo.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class BlogController : Controller
     {
         public IActionResult ExportStaticExcelBlogList()
@@ -30,7 +31,7 @@ namespace CoreDemo.Areas.Admin.Controllers
                 {
                     workBook.SaveAs(stream);
                     var content = stream.ToArray();
-                    return File(content, "application / vnd.openxmlformats - officedocument.spreadsheetml.sheet", "Calisma1.xlsx");
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Calisma1.xlsx");
                 }
             }
                
@@ -45,5 +46,8 @@ namespace CoreDemo.Areas.Admin.Controllers
             };
             return bm;
         }
+        public IActionResult BlogListExcel()
+        {
+            return View();        }
     }
 }
