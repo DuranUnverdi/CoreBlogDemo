@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BusinessLayer.Abstract
 {
-   public interface IContactService
+   public interface IContactService : IGenericService<Contact>
     {
         void AddContact(Contact contact);
     }
