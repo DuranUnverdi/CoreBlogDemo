@@ -20,6 +20,12 @@ namespace CoreDemo.Areas.Admin.Controllers
             var jsonWriters = JsonConvert.SerializeObject(writers);
             return Json(jsonWriters);
         }
+        public IActionResult GetWriterById(int id)
+        {
+            var findWriter = writers.FirstOrDefault(x => x.Id == id);
+            var jsonWriters = JsonConvert.SerializeObject(findWriter);
+            return Json(jsonWriters);
+        }
         public static List<WriterClass> writers = new List<WriterClass>
         {
             new WriterClass
