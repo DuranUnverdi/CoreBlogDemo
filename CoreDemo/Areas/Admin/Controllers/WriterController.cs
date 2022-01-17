@@ -20,9 +20,9 @@ namespace CoreDemo.Areas.Admin.Controllers
             var jsonWriters = JsonConvert.SerializeObject(writers);
             return Json(jsonWriters);
         }
-        public IActionResult GetWriterById(int id)
+        public IActionResult GetWriterById(int writerid)
         {
-            var findWriter = writers.FirstOrDefault(x => x.Id == id);
+            var findWriter = writers.FirstOrDefault(x => x.Id == writerid);
             var jsonWriters = JsonConvert.SerializeObject(findWriter);
             return Json(jsonWriters);
         }

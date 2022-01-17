@@ -17,7 +17,7 @@
 
 </div>
 <div>
-    <input type="text" id="id" placeholder="Yazar ID Değerini girin" class="form-control" />
+    <input type="text" id="writerid" placeholder="Yazar ID Değerini girin" class="form-control" />
 </div>
 <br />
 @section scripts{
@@ -39,9 +39,20 @@
                 }
             });
         });
+
         $("#btngetbyid").click(x => {
-            let id = $("#id").val();
-            console.log(id);
-        })
+            let id = $("#writerid").val();
+            $.ajax({
+                contentType: "application/json",
+                dataType: "Json",
+                type: "Get",
+                url: "/Admin/Writer/GetWriterById/",
+                data: { writerid:id },
+                success: function (func) {
+                    let w = jQuery.parseJSON(func)
+                    console.log(w)
+                }
+            });
+        });
     </script>
 }
