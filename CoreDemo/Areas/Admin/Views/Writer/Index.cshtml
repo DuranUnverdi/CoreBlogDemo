@@ -8,6 +8,7 @@
 <br />
 <button type="button" id="btngetlist" class="btn btn-outline-primary">Yazar Listesi</button>
 <button type="button" id="btngetbyid" class="btn btn-outline-success">Yazar Getir</button>
+<button type="button" id="btnaddwriter" class="btn btn-outline-info">Yazar Ekle</button>
 <br />
 <br />
 <div id="writerlist">
@@ -18,6 +19,11 @@
 </div>
 <div>
     <input type="text" id="writerid" placeholder="Yazar ID Değerini girin" class="form-control" />
+</div>
+<br />
+<div >
+    <input type="text" class="form-control" id="txtwriterid" placeholder="Yazar Id"/>
+    <input type="text" class="form-control" id="txtwritername" placeholder="Yazar Adı"/>
 </div>
 <br />
 @section scripts{
@@ -54,6 +60,22 @@
                     let getValue = `<table class=table table-bordered> <tr><th>Yazar ID</th><th>Yazar Adı</th></tr> <tr><td>${w.Id}</td><td>${w.Name}</td></tr></table>`;
 
                     $("#writerget").html(getValue);
+                }
+            });
+        });
+
+        $("#btnaddwriter").click(function () {
+            let writer = {
+                Id: $("#txtwriterid").val(),
+                Name: $("#txtwritername").val()
+            };
+            $.ajax({
+                type: "post",
+                url: "/Admin/Writer/AddWriter/",
+                data: writer,
+                success: function (func) {
+                    let result = jQuery.parseJSON(func);
+                    alert("Yazar ekleme işlemi başarılı");
                 }
             });
         });

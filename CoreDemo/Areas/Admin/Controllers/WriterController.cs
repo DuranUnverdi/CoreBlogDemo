@@ -20,6 +20,13 @@ namespace CoreDemo.Areas.Admin.Controllers
             var jsonWriters = JsonConvert.SerializeObject(writers);
             return Json(jsonWriters);
         }
+        [HttpPost]
+        public IActionResult AddWriter(WriterClass w)
+        {
+            writers.Add(w);
+            var JsonWriters = JsonConvert.SerializeObject(w);
+            return Json(JsonWriters);
+        }
         public IActionResult GetWriterById(int writerid)
         {
             var findWriter = writers.FirstOrDefault(x => x.Id == writerid);
